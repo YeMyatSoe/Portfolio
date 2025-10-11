@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #111827;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+  font-size: 28px;
+  color: #14b8a6;
+}
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 250px;
+  padding-right: 20px;
+}
+
+.hello {
+  font-size: 18px;
+  color: #4b5563;
+  margin-bottom: 4px;
+}
+
+.name {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.title {
+  font-size: 20px;
+  color: #14b8a6;
+  margin: 8px 0;
+}
+
+.description {
+  font-size: 16px;
+  color: #374151;
+  margin-bottom: 12px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.primaryBtn {
+  background-color: #14b8a6;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.secondaryBtn {
+  border: 2px solid #14b8a6;
+  color: #14b8a6;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.profileImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.section {
+  padding: 40px 0;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.sectionText {
+  font-size: 16px;
+  color: #374151;
+}
+
+.skillContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skillCard {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+.projectCard {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.projectTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.projectDesc {
+  margin-bottom: 8px;
+}
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.tag {
+  background-color: #d1fae5;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #065f46;
+}
+
+.projectLink {
+  color: #14b8a6;
+  font-weight: bold;
+  text-decoration: none;
+}
