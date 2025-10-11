@@ -289,5 +289,18 @@
     <script>
         lucide.createIcons();
     </script>
+    <script>
+    // Select the menu button and mobile menu
+    const menuButton = document.querySelector('button.md\\:hidden');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden'); // Show/hide mobile menu
+    });
+
+    // Initialize Lucide icons
+    lucide.createIcons();
+</script>
+
 </body>
 </html>
