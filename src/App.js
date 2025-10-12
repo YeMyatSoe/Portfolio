@@ -1,6 +1,11 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { BrowserRouter } from "react-router-dom";
+
+<BrowserRouter basename="/Portfolio">
+  <App />
+</BrowserRouter>
 
 // 🌟 Animation variants
 const fadeUp = {
@@ -90,7 +95,7 @@ const ScrollSection = ({ id, children, className = "" }) => (
 );
 
 const App = () => {
-  const skills = ["Flutter", ,"React", "HTML/CSS", "JavaScript", "Python", "PHP", "MySQL", "Bootstrap", "Django"];
+  const skills = ["Flutter", "React", "HTML/CSS", "JavaScript", "Python", "PHP", "MySQL", "Bootstrap", "Django"];
   const projects = [
     { title: "E-commerce App", description: "Flutter + Django backend+RESTFulApi", link: "https://stswm.com" },
     { title: "LMS Website", description: "Dango+RESTFulApi+HTML+CSS+JavaScript", link: "https://ncapjtc.com" },
@@ -165,11 +170,7 @@ const App = () => {
 {/* Right Content - Profile Image */}
 <div className="md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-0 flex-shrink-0">
   <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-cyan-500">
-    <img
-      src="Portfolio/profile.jpg"
-      alt="Profile"
-      className="w-full h-full object-cover rounded-full"
-    />
+  <img src={`${process.env.PUBLIC_URL}/profile.jpg`} alt="Profile" ... />
   </div>
 </div>
 </ScrollSection>
