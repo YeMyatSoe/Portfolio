@@ -1,11 +1,7 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { BrowserRouter } from "react-router-dom";
 
-<BrowserRouter basename="/Portfolio">
-  <App />
-</BrowserRouter>
 
 // 🌟 Animation variants
 const fadeUp = {
