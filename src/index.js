@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css'; // <-- Tailwind CSS
+import './index.css';
 import App from './App';
+import { BrowserRouter } from 'react-router-dom'; // import React Router
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+root.render(
+  <BrowserRouter basename="/Portfolio"> {/* add basename */}
+    <App />
+  </BrowserRouter>
+);
