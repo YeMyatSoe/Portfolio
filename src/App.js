@@ -173,7 +173,7 @@ const App = () => {
     />
   </div>
 </div>
-
+      </ScrollSection>
 
 
       {/* About */}
