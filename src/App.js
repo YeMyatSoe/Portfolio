@@ -167,13 +167,13 @@ const App = () => {
 <div className="md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-0 flex-shrink-0">
   <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-cyan-500">
     <img
-      src="Portfolio/public/profile.jpg"
+      src="/profile.jpg"  // ✅ Use leading slash, since profile.jpg is in public
       alt="Profile"
       className="w-full h-full object-cover rounded-full"
     />
   </div>
 </div>
-</ScrollSection>
+
 
 
       {/* About */}
