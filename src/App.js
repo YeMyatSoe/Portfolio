@@ -103,7 +103,7 @@ const App = () => {
   return (
     <div className="bg-slate-950 text-gray-200 min-h-screen font-sans">
 
-      {/* Navbar */}
+
       <header className="flex justify-between items-center p-6 bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-2xl shadow-cyan-500/10 border-b border-cyan-700/50">
         <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-sky-400 tracking-wider hover:scale-105 transition duration-300">
           Ye Myat Soe
@@ -124,16 +124,16 @@ const App = () => {
         </nav>
       </header>
 
-{/* Hero Section */}
+
 <ScrollSection id="hero" className="flex flex-col md:flex-row items-center justify-between p-10 md:p-24 min-h-[85vh]">
-  {/* Left Content */}
+
   <div className="md:w-1/2 mb-10 md:mb-0 md:pr-12">
     <p className="text-xl text-sky-400 mb-2 font-mono">Hi, my name is</p>
     <h2 className="text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight">Ye Myat Soe.</h2>
     <p className="text-2xl md:text-3xl font-semibold text-teal-400 mb-6">I build modern web & mobile applications.</p>
     <p className="text-slate-400 text-lg mb-8 max-w-lg">Full-Stack Developer skilled in Flutter, Python/Django, and modern development practices.</p>
 
-    {/* Buttons */}
+
     <div className="flex gap-4 mb-8">
       <button 
         onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })} 
@@ -149,7 +149,7 @@ const App = () => {
       </button>
     </div>
 
-    {/* Social Icons */}
+
     <div className="flex gap-6 text-3xl">
       <a href="https://github.com/YeMyatSoe" target="_blank" rel="noreferrer" className="text-gray-400 hover:text-white hover:scale-125 transition duration-300">
         <FaGithub />
@@ -176,7 +176,7 @@ const App = () => {
       </ScrollSection>
 
 
-      {/* About */}
+
       <ScrollSection id="about" className="p-10 md:p-20 bg-slate-900 rounded-xl m-6 md:m-20 shadow-2xl shadow-cyan-500/10">
         <h2 className="text-4xl font-bold text-sky-400 mb-6 border-b-2 border-teal-600/50 pb-2">About Me</h2>
         <p className="text-slate-300 text-lg leading-relaxed">
@@ -187,13 +187,13 @@ const App = () => {
         </p>
       </ScrollSection>
 
-      {/* Skills */}
+
       <ScrollSection id="skills" className="p-10 md:p-20">
         <h2 className="text-4xl font-bold text-sky-400 mb-12 text-center">My Toolkit</h2>
         <SkillsGrid skills={skills} />
       </ScrollSection>
 
-      {/* Projects */}
+
       <ScrollSection id="projects" className="p-10 md:p-20 bg-slate-900 rounded-xl m-6 md:m-20 shadow-2xl shadow-cyan-500/10">
         <h2 className="text-4xl font-bold text-sky-400 mb-12 border-b-2 border-teal-600/50 pb-2">Featured Work</h2>
         <div className="grid md:grid-cols-3 gap-10">
@@ -201,7 +201,7 @@ const App = () => {
         </div>
       </ScrollSection>
 
-      {/* Contact */}
+
       <ScrollSection id="contact" className="p-10 md:p-20 text-center">
         <h2 className="text-4xl font-bold text-sky-400 mb-4">Let's Connect</h2>
         <p className="text-slate-300 text-xl mb-8 max-w-2xl mx-auto">I'm open for new projects. Reach out to discuss your ideas!</p>
@@ -211,7 +211,7 @@ const App = () => {
         </button>
       </ScrollSection>
 
-      {/* Footer */}
+
       <footer className="text-center p-6 text-slate-500 border-t border-slate-700/50">
         © 2025 Ye Myat Soe. Crafted with <span className="text-red-500">❤️</span> and Tailwind CSS.
       </footer>
