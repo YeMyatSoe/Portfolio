@@ -163,7 +163,7 @@ const App = () => {
     </div>
   </div>
 
-{/* Right Content - Profile Image */}
+
 <div className="md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-0 flex-shrink-0">
   <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-cyan-500">
     <img
