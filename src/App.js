@@ -8,11 +8,7 @@ const fadeUp = {
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: {
-      delay: i * 0.15,
-      duration: 0.8,
-      ease: [0.68, -0.55, 0.265, 1.55],
-    },
+    transition: { delay: i * 0.15, duration: 0.8, ease: [0.68, -0.55, 0.265, 1.55] },
   }),
 };
 
@@ -27,7 +23,7 @@ const SkillPill = ({ skill, i }) => (
     className="bg-slate-800 text-teal-300 px-6 py-3 rounded-full shadow-lg shadow-slate-700/30 
                hover:bg-slate-700 hover:text-white 
                transform transition hover:-translate-y-2 hover:shadow-xl hover:shadow-teal-500/50 
-               font-medium cursor-default border border-transparent text-sm sm:text-base break-words"
+               font-medium cursor-default text-sm sm:text-base break-words w-full text-center"
   >
     {skill}
   </motion.div>
@@ -41,7 +37,9 @@ const ProjectCard = ({ proj, i }) => (
     whileInView="visible"
     viewport={{ once: false, amount: 0.3 }}
     variants={fadeUp}
-    className="bg-slate-800 p-6 sm:p-8 rounded-xl shadow-2xl shadow-black/50 border border-transparent transform transition hover:-translate-y-2 hover:shadow-cyan-500/50 hover:border-cyan-500/50 break-words"
+    className="bg-slate-800 p-6 rounded-xl shadow-2xl shadow-black/50 border border-transparent 
+               transform transition hover:-translate-y-2 hover:shadow-cyan-500/50 hover:border-cyan-500/50 
+               break-words w-full"
   >
     <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{proj.title}</h3>
     <p className="text-slate-400 mb-4 h-auto sm:h-12 text-sm sm:text-base break-words">{proj.description}</p>
@@ -110,7 +108,7 @@ const App = () => {
 
       {/* Header */}
       <header className="bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-2xl shadow-cyan-500/10 border-b border-cyan-700/50">
-        <div className="flex justify-between items-center p-4 sm:p-6 max-w-7xl mx-auto">
+        <div className="flex justify-between items-center p-4 sm:p-6 container mx-auto">
           <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-sky-400 tracking-wider hover:scale-105 transition duration-300">
             Ye Myat Soe
           </h1>
@@ -142,7 +140,7 @@ const App = () => {
       </header>
 
       {/* Hero Section */}
-      <ScrollSection id="hero" className="flex flex-col-reverse md:flex-row items-center justify-between p-6 sm:p-10 md:p-24 min-h-[85vh]">
+      <ScrollSection id="hero" className="flex flex-col-reverse md:flex-row items-center justify-between py-10 sm:py-14 md:py-24 container mx-auto">
         <div className="md:w-1/2 w-full mb-8 md:mb-0 md:pr-12 text-center md:text-left">
           <p className="text-lg sm:text-xl text-sky-400 mb-2 font-mono">Hi, my name is</p>
           <h2 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight">Ye Myat Soe.</h2>
@@ -179,7 +177,7 @@ const App = () => {
       </ScrollSection>
 
       {/* About Section */}
-      <ScrollSection id="about" className="p-6 sm:p-10 md:p-20 bg-slate-900 rounded-xl mx-4 sm:mx-10 md:mx-20 shadow-2xl shadow-cyan-500/10">
+      <ScrollSection id="about" className="bg-slate-900 rounded-xl shadow-2xl shadow-cyan-500/10 py-10 container mx-auto px-4 sm:px-6 md:px-20 mb-10">
         <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-sky-400 mb-6 border-b-2 border-teal-600/50 pb-2">About Me</h2>
         <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
           Hello! I’m <b>Ye Myat Soe</b>, a passionate web and mobile developer from Yangon, Myanmar.
@@ -189,21 +187,23 @@ const App = () => {
       </ScrollSection>
 
       {/* Skills Section */}
-      <ScrollSection id="skills" className="p-6 sm:p-10 md:p-20">
+      <ScrollSection id="skills" className="py-10 container mx-auto px-4 sm:px-6 md:px-20 mb-10">
         <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-sky-400 mb-12 text-center">My Toolkit</h2>
         <SkillsGrid skills={skills} />
       </ScrollSection>
 
       {/* Projects Section */}
-      <ScrollSection id="projects" className="p-6 sm:p-10 md:p-20 bg-slate-900 rounded-xl mx-4 sm:mx-10 md:mx-20 shadow-2xl shadow-cyan-500/10">
-        <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-sky-400 mb-12 border-b-2 border-teal-600/50 pb-2 text-center">Featured Work</h2>
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <ScrollSection id="projects" className="bg-slate-900 rounded-xl shadow-2xl shadow-cyan-500/10 py-10 container mx-auto px-4 sm:px-6 md:px-20 mb-10">
+        <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-sky-400 mb-12 border-b-2 border-teal-600/50 pb-2 text-center">
+          Featured Work
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((proj, i) => <ProjectCard key={i} proj={proj} i={i} />)}
         </div>
       </ScrollSection>
 
       {/* Contact Section */}
-      <ScrollSection id="contact" className="p-6 sm:p-10 md:p-20 text-center">
+      <ScrollSection id="contact" className="text-center py-10 container mx-auto px-4 sm:px-6 md:px-20 mb-10">
         <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-sky-400 mb-4">Let's Connect</h2>
         <p className="text-slate-300 text-base sm:text-xl mb-8 max-w-xl mx-auto">I'm open for new projects. Reach out to discuss your ideas!</p>
         <p className="text-teal-400 text-xl sm:text-2xl font-mono mb-8">yemyatsoe888@gmail.com</p>
@@ -213,7 +213,7 @@ const App = () => {
       </ScrollSection>
 
       {/* Footer */}
-      <footer className="text-center p-4 sm:p-6 text-slate-500 border-t border-slate-700/50 text-sm sm:text-base">
+      <footer className="text-center py-6 text-slate-500 border-t border-slate-700/50 text-sm sm:text-base">
         © 2025 Ye Myat Soe. Crafted with <span className="text-red-500">❤️</span> and Tailwind CSS.
       </footer>
 
