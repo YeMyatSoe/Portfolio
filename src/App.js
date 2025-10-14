@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+ React, { useEffect } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 
