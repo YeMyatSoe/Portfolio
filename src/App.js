@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 
@@ -27,7 +27,7 @@ const SkillPill = ({ skill, i }) => (
     className="bg-slate-800 text-teal-300 px-6 py-3 rounded-full shadow-lg shadow-slate-700/30 
                hover:bg-slate-700 hover:text-white 
                transform transition hover:-translate-y-2 hover:shadow-xl hover:shadow-teal-500/50 
-               font-medium cursor-default border border-transparent text-sm sm:text-base"
+               font-medium cursor-default border border-transparent text-sm sm:text-base break-words"
   >
     {skill}
   </motion.div>
@@ -41,11 +41,10 @@ const ProjectCard = ({ proj, i }) => (
     whileInView="visible"
     viewport={{ once: false, amount: 0.3 }}
     variants={fadeUp}
-    className="bg-slate-800 p-6 sm:p-8 rounded-xl shadow-2xl shadow-black/50 border border-transparent 
-               transform transition hover:-translate-y-2 hover:shadow-cyan-500/50 hover:border-cyan-500/50"
+    className="bg-slate-800 p-6 sm:p-8 rounded-xl shadow-2xl shadow-black/50 border border-transparent transform transition hover:-translate-y-2 hover:shadow-cyan-500/50 hover:border-cyan-500/50 break-words"
   >
     <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{proj.title}</h3>
-    <p className="text-slate-400 mb-4 h-auto sm:h-12 text-sm sm:text-base">{proj.description}</p>
+    <p className="text-slate-400 mb-4 h-auto sm:h-12 text-sm sm:text-base break-words">{proj.description}</p>
     <a
       href={proj.link}
       target="_blank"
@@ -99,28 +98,47 @@ const App = () => {
 
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
+  // Mobile menu toggle
+  useEffect(() => {
+    const btn = document.getElementById("mobile-menu-button");
+    const menu = document.getElementById("mobile-menu");
+    btn.addEventListener("click", () => menu.classList.toggle("hidden"));
+  }, []);
+
   return (
     <div className="bg-slate-950 text-gray-200 min-h-screen font-sans">
 
       {/* Header */}
-      <header className="flex flex-col sm:flex-row justify-between items-center p-4 sm:p-6 bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-2xl shadow-cyan-500/10 border-b border-cyan-700/50">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-sky-400 tracking-wider hover:scale-105 transition duration-300">
-          Ye Myat Soe
-        </h1>
-        <nav className="mt-4 sm:mt-0">
-          <ul className="flex flex-col sm:flex-row gap-4 sm:gap-8 font-medium items-center">
+      <header className="bg-slate-900/80 backdrop-blur-sm sticky top-0 z-50 shadow-2xl shadow-cyan-500/10 border-b border-cyan-700/50">
+        <div className="flex justify-between items-center p-4 sm:p-6 max-w-7xl mx-auto">
+          <h1 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-sky-400 tracking-wider hover:scale-105 transition duration-300">
+            Ye Myat Soe
+          </h1>
+          
+          {/* Desktop Menu */}
+          <nav className="hidden md:flex gap-6 font-medium">
             {["About", "Skills", "Projects", "Contact"].map((item) => (
-              <li
-                key={item}
-                className="text-gray-300 hover:text-sky-400 transition cursor-pointer relative group"
-                onClick={() => scrollTo(item.toLowerCase())}
-              >
+              <div key={item} className="text-gray-300 hover:text-sky-400 cursor-pointer relative group" onClick={() => scrollTo(item.toLowerCase())}>
                 {item}
-                <span className="absolute left-0 bottom-0 w-full h-[2px] bg-sky-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-              </li>
+                <span className="absolute left-0 bottom-0 w-full h-[2px] bg-sky-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+              </div>
             ))}
-          </ul>
-        </nav>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button id="mobile-menu-button" className="text-gray-300 hover:text-white text-2xl">☰</button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div id="mobile-menu" className="hidden md:hidden flex flex-col gap-4 px-4 pb-4">
+          {["About", "Skills", "Projects", "Contact"].map((item) => (
+            <div key={item} className="text-gray-300 hover:text-sky-400 cursor-pointer text-lg" onClick={() => scrollTo(item.toLowerCase())}>
+              {item}
+            </div>
+          ))}
+        </div>
       </header>
 
       {/* Hero Section */}
@@ -161,7 +179,7 @@ const App = () => {
       </ScrollSection>
 
       {/* About Section */}
-      <ScrollSection id="about" className="p-6 sm:p-10 md:p-20 bg-slate-900 rounded-xl m-4 sm:m-10 md:m-20 shadow-2xl shadow-cyan-500/10">
+      <ScrollSection id="about" className="p-6 sm:p-10 md:p-20 bg-slate-900 rounded-xl mx-4 sm:mx-10 md:mx-20 shadow-2xl shadow-cyan-500/10">
         <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-sky-400 mb-6 border-b-2 border-teal-600/50 pb-2">About Me</h2>
         <p className="text-slate-300 text-base sm:text-lg leading-relaxed">
           Hello! I’m <b>Ye Myat Soe</b>, a passionate web and mobile developer from Yangon, Myanmar.
@@ -177,9 +195,9 @@ const App = () => {
       </ScrollSection>
 
       {/* Projects Section */}
-      <ScrollSection id="projects" className="p-6 sm:p-10 md:p-20 bg-slate-900 rounded-xl m-4 sm:m-10 md:m-20 shadow-2xl shadow-cyan-500/10">
-        <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-sky-400 mb-12 border-b-2 border-teal-600/50 pb-2">Featured Work</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <ScrollSection id="projects" className="p-6 sm:p-10 md:p-20 bg-slate-900 rounded-xl mx-4 sm:mx-10 md:mx-20 shadow-2xl shadow-cyan-500/10">
+        <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-sky-400 mb-12 border-b-2 border-teal-600/50 pb-2 text-center">Featured Work</h2>
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((proj, i) => <ProjectCard key={i} proj={proj} i={i} />)}
         </div>
       </ScrollSection>
